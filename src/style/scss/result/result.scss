@@ -1,0 +1,110 @@
+#resultone,#resulttwo{
+    height:auto;
+//height:100%;
+  width:100%;
+  background-color: #379e72;
+    .main_bg{
+      width:100%;
+      @include pxCalc(height,434px);
+    }
+    .main_bg img{
+      width:100%;
+      height:100%;
+    }
+    .container{
+       @include pxCalc(width, 700px);
+       @include pxCalc(margin-left,25px);
+       @include pxCalc(margin-top,-56px);
+    }
+    .play_one_title{
+      @include pxCalc(width, 700px);
+      @include pxCalc(height, 107px);
+      margin:0 auto;
+    }
+    .table_title{
+      @include pxCalc(height, 90px);
+      @include pxCalc(line-height,90px);
+      @include pxCalc(margin-top,-12px);
+      @include pxCalc(font-size,30px);
+      background-color: #d7ece3;
+      color:#379e72;
+    }
+    .table_title div{
+      float:left;
+      @include pxCalc(height, 90px);
+      @include pxCalc(line-height,90px);
+      text-align: center;
+    }
+    .rank{
+      @include pxCalc(width,160px);
+    }
+    .name{
+      @include pxCalc(width,120px);
+    }
+    .tel{
+      @include pxCalc(width,220px);
+    }
+    .num{
+      @include pxCalc(width,200px);
+    }
+    .table_content{
+      background: #f1f8f5;
+      overflow: hidden;
+      @include pxCalc(border-radius,12px);
+    }
+    .table_content div{
+      float:left;
+      @include pxCalc(height,90px);
+      @include pxCalc(line-height,90px);
+      text-align: center;
+      @include pxCalc(font-size,26px);
+    }
+    .table_content img{
+      @include pxCalc(margin-top,10px);
+      @include pxCalc(width,52px);
+      @include pxCalc(height,70px);
+    }
+    .table_content .num{
+      color:#ce1d1d;
+      @include pxCalc(font-size,38px);
+    }
+    .table_content .rank{
+      @include pxCalc(font-size,38px);
+      font-style:italic
+    }
+    .table_content .tr{
+      clear: both;
+    }
+    .detail{
+      clear: both;
+      @include pxCalc(height,90px);
+      width:100%;
+      @include pxCalc(font-size,22px);
+      @include pxCalc(text-indent,10px);
+      background: #d7ece3;
+      text-align: left!important;
+      color:#999;
+    }
+    .container_second{
+      @include pxCalc(margin-top,30px);
+    }
+    .play_two_title{
+      @include pxCalc(width,700px);
+      @include pxCalc(height,107px);
+      margin:0 auto;
+    }
+    .forcast{
+      @include pxCalc(margin-top,10px);
+      @include pxCalc(width,700px);
+      @include pxCalc(margin-left,25px);
+      @include pxCalc(line-height,35px);
+      @include pxCalc(font-size,24px);
+      color:#ffffff;
+    }
+    .bottom_img{
+      @include pxCalc(width,750px);
+      @include pxCalc(height,169px);
+      margin-bottom:0;
+      vertical-align: bottom;
+    }
+}

@@ -1,0 +1,42 @@
+@import "../../base/_mixin";
+
+//popup 样式
+#popBox{
+  .vux-popup-dialog.vux-popup-top{
+    @include pxCalc(top,88px);
+  }
+
+  .vux-popup-dialog{
+    @include pxCalc(padding,38px, 72px, 43px,73px);
+  }
+
+  .title{
+    @include pxCalc(height, $tr_font_size_base);
+    @include pxCalc(line-height, $tr_font_size_base);
+    @include pxCalc(font-size, $tr_font_size_base);
+    @include pxCalc(margin-bottom, 27px);
+    color: $tr_font_base;
+    text-align: center;
+  }
+  .button{
+    display: inline-block;
+    @include pxCalc(border-radius, 8px);
+    @include pxCalc(font-size, $tr_font_size_base);
+    color: $tr_font_base;
+    @include pxCalc(width, 181px);
+    @include pxCalc(height, 58px);
+    margin:0;
+    @include pxCalc(margin-right, 30px);
+    @include pxCalc(margin-bottom, 25px);
+    border-color: $tr_line;
+
+    &.on{
+      border-color: $tr_font_data_base;
+      color: $tr_font_data_base;
+    }
+
+    &:nth-child(3n){
+      margin-right: 0;
+    }
+  }
+}

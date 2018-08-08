@@ -1,0 +1,93 @@
+@import "./_variable";
+
+//设计稿 font-size
+$browser-default-font-size: 36px !default;
+
+//px 转 rem
+@function pxTorem($px){
+  @return $px / $browser-default-font-size * 1rem;
+}
+
+//去除单位
+@function strip-units($number){
+  @return $number / ($number * 0 + 1);
+}
+
+//eg: @include font-size(12px);
+@mixin font-size($target){
+  font-size: $target;
+  font-size: ($target / $browser-default-font-size) * 1rem;
+}
+
+/*
+  rem 转 px 支持多参数
+  eg:
+    @include pxCalc(height,1rem);
+    @include pxCalc(height,1);
+    @include pxCalc(margin, 1, 2);
+    @include pxCalc(margin, 0.5, 1, 1.5, 2);
+*/
+@mixin remCalc($property, $values...) {
+  $max: length($values);//返回$values列表的长度值
+  $pxValues: '';
+  $remValues: '';
+  @for $i from 1 through $max {
+    $value: strip-units(nth($values, $i));//返回$values列表中的第$i个值，并将单位值去掉
+    $browser-default-font-size: strip-units($browser-default-font-size);
+    $pxValues: #{$pxValues + $value * $browser-default-font-size}px;
+    @if $i < $max { $pxValues: #{$pxValues + " "}; }
+  }
+  @for $i from 1 through $max {
+    $value: strip-units(nth($values, $i));
+    $remValues: #{$remValues + $value}rem;
+    @if $i < $max { $remValues: #{$remValues + " "}; }
+  }
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+/*
+  px 转 rem 支持多参数
+  eg:
+    @include pxCalc(height,30px);
+    @include pxCalc(height,30);
+    @include pxCalc(margin, 10px, 20px);
+    @include pxCalc(margin, 5px, 10px, 15px, 20px);
+*/
+@mixin pxCalc($property, $values...) {
+  $max: length($values);//返回$values列表的长度值
+  $pxValues: '';
+  $remValues: '';
+  @for $i from 1 through $max {
+    $value: strip-units(nth($values, $i));//返回$values列表中的第$i个值，并将单位值去掉
+    $pxValues: #{$pxValues + $value }px;
+    @if $i < $max { $pxValues: #{$pxValues + " "}; }
+  }
+  @for $i from 1 through $max {
+    $value: strip-units(nth($values, $i));
+    $browser-default-font-size: strip-units($browser-default-font-size);
+    $remValues: #{$remValues + $value / $browser-default-font-size}rem;
+    @if $i < $max { $remValues: #{$remValues + " "}; }
+  }
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+}
+
+//定位上下左右居中
+@mixin ctp($width, $height) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $width;
+  height: $height;
+  margin-top: -$height/2;
+  margin-left: -$width/2;
+}
+
+//定位上下左右居中
+@mixin ctp_noWT() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

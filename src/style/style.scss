@@ -1,0 +1,101 @@
+@import "./base/_mixin";
+@import './base/_reset';
+@import './base/_base';
+@import "./base/theme.less";
+
+/*去除百度地图版权*/
+.anchorBL{
+  display:none !important;
+}
+
+.router-view{
+  width: 100%;
+  min-height: 100%;
+}
+
+.page_box{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hasHeaderFooter{
+  @include pxCalc(padding, $header_height, 0, $footer_height);
+}
+
+.hasHeader{
+  @include pxCalc(padding-top, $header_height);
+}
+
+html,body{
+  background: transparent;
+}
+
+.disable-scroll{
+  overflow: hidden!important;
+}
+
+
+
+//日期统一样式
+.dp-header{
+  background-color: $tr_base;
+  @include pxCalc(height, 88px);
+  @include pxCalc(line-height, 88px);
+  @include pxCalc(padding, 0,24px);
+  @include pxCalc(font-size, $tr_font_size_base);
+  background-image: none!important;
+
+  .dp-item{
+    height: 100% !important;
+    line-height: inherit !important;
+  }
+
+  .vux-datetime-cancel{
+    padding-left: 0!important;
+    color: #fff!important;
+    font-size: inherit!important;
+  }
+
+  .vux-datetime-clear{
+    color: $tr_font_data_base!important;
+    font-size: inherit!important;
+  }
+
+  .vux-datetime-confirm{
+    padding-right: 0!important;
+    color: #fff!important;
+    font-size: inherit!important;
+  }
+}
+.dp-container{
+  background: $tr_bar !important;
+
+
+  .scroller-mask{
+    background-image: linear-gradient(to bottom, rgba(37, 47, 59, .88), rgba(37, 47, 59, 0)), linear-gradient(to top, rgba(37, 47, 59, .88), rgba(37, 47, 59, 0)) !important;
+  }
+
+  .scroller-item{
+    color: #fff!important;
+  }
+
+  .scroller-indicator{
+    color: $tr_font_data_2!important;
+    background-image: linear-gradient(to bottom, $tr_line, $tr_line, transparent, transparent), linear-gradient(to top, $tr_line, $tr_line, transparent, transparent) !important;
+  }
+}
+
+.weui-cell_access:active {
+  background-color: transparent !important;
+}
+
+
+.TitleBtn:active{
+  background-color: #2b3745 !important;;
+}
+
+
+.weui-mask_transparent{
+  z-index: 10000!important;
+}

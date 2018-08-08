@@ -1,0 +1,806 @@
+#indexSingle{
+  overflow-x: hidden;
+  .vux-1px:after,
+  .vux-1px:before,
+  .vux-1px-tb:after,
+  .vux-1px-tb:before,
+  .vux-1px-b:after,
+  .vux-1px-r:after,
+  .vux-1px-t:before,
+  .vux-1px-l:before{
+    border-color: $tr_line;
+  }
+
+  .wt-flexbox{
+    .arrow_left{
+      @include pxCalc(height,$arrow_height);
+      @include pxCalc(width,$arrow_width);
+      @include pxCalc(margin-top,20px);
+      color: $arrow_bg;
+      transform: rotate(-90deg);
+    }
+  }
+
+  .total-power-wrap{
+    @include pxCalc(height,497px);
+    @include pxCalc(font-size,$tr_font_size_base);
+    color: $tr_font_2;
+    text-align: center;
+    position: relative;
+
+    &.vux-1px-t:before{
+      border-color: $tr_line_2;
+    }
+
+    .on-grid-energy-wrap{
+      @include pxCalc(height,427px);
+      background: $tr_bar;
+      @include pxCalc(padding-top,20px);
+
+      .title{
+        @include pxCalc(height,37px);
+        @include pxCalc(line-height,37px);
+      }
+
+      .val{
+        display: inline-block;
+        @include pxCalc(font-size,50px);
+        color: $tr_font_data_base;
+        @include pxCalc(height,70px);
+        @include pxCalc(line-height,70px);
+      }
+
+      .line{
+        @include pxCalc(height,145px);
+
+        .val{
+          @include pxCalc(font-size,70px);
+          @include pxCalc(height,98px);
+          @include pxCalc(line-height,98px);
+
+        }
+      }
+
+      .line2{
+        @include pxCalc(height,260px);
+        @include pxCalc(padding-top,32px);
+
+        .item-box{
+          width: 50%;
+        }
+      }
+    }
+
+    .equivalent-hours-wrap{
+      @include pxCalc(height,140px);
+      position: absolute;
+      bottom: 0;
+      left:50%;
+      transform: translateX(-50%);
+      box-shadow: 0 2px 4px 0 #06111c;
+      @include pxCalc(width,702px);
+      @include pxCalc(border-radius,8px);
+      @include pxCalc(padding-top,29px);
+      background: $tr_base;
+      .item-wrap{
+        width: 50%;
+      }
+
+      .title{
+        @include pxCalc(font-size,24px);
+        @include pxCalc(height,33px);
+        @include pxCalc(line-height,33px);
+      }
+
+      .val{
+        color: $tr_font_data_4;
+        @include pxCalc(height,37px);
+        @include pxCalc(line-height,37px);
+        @include pxCalc(margin-top,12px);
+      }
+
+    }
+  }
+
+  .reliability-index-wrap {
+    background:$tr_bg;
+    @include pxCalc(height,367px);
+    @include pxCalc(padding-top, 20px);
+    @include pxCalc(margin-bottom, 20px);
+    width:100%;
+    color:$tr_font_2;
+    @include pxCalc(font-size,$tr_font_size_base);
+
+    .title-wrap{
+      @include pxCalc(height,80px);
+      @include pxCalc(line-height,80px);
+      @include pxCalc(font-size,$tr_font_size_title);
+      @include pxCalc(padding, 0, $right_width, 0, $left_width);
+      .title{
+        color: $tr_font_base;
+      }
+    }
+
+    .bottom-wrap{
+      @include pxCalc(height,267px);
+      @include pxCalc(padding, 19px, 24px,0,24px);
+
+      .item-wrap{
+        float: left;
+        background: $tr_base;
+        @include pxCalc(height,245px);
+        @include pxCalc(width,218px);
+        @include pxCalc(margin-right,21px);
+        @include pxCalc(padding-top,17px);
+
+        &:last-child{
+          .val-wrap{
+            @include pxCalc(padding-top,10px);
+          }
+        }
+
+        &.vux-1px:before{
+          @include pxCalc(border-radius,8px);
+        }
+        &:last-child{
+          @include pxCalc(margin-right,0);
+        }
+
+        .title{
+          @include pxCalc(line-height,33px);
+          text-align: center;
+          @include pxCalc(font-size,24px);
+          @include pxCalc(margin-bottom,14px);
+        }
+
+        .val-wrap{
+          @include pxCalc(height,140px);
+          @include pxCalc(width,140px);
+          margin: 0 auto;
+          text-align: center;
+          position: relative;
+
+          .charts{
+            @include pxCalc(height,140px);
+            @include pxCalc(width,140px);
+          }
+
+          .percent{
+            @include pxCalc(height,140px);
+            @include pxCalc(line-height,140px);
+            text-align: center;
+            @include pxCalc(width,140px);
+            position: absolute;
+            top:0;
+            left: 0;
+            color: $tr_font_data_4;
+          }
+
+          .val{
+            @include pxCalc(height,37px);
+            @include pxCalc(line-height,37px);
+            color: $tr_font_data_base;
+            @include pxCalc(margin-bottom,12px);
+          }
+
+          .unit{
+            @include pxCalc(height,33px);
+            @include pxCalc(line-height,33px);
+            @include pxCalc(font-size,24px);
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+  .power-curve-wrap{
+    background:$tr_base;
+    @include pxCalc(height,666px);
+    @include pxCalc(margin, 0, 0, 20px);
+    color: $tr_font_base;
+
+    .title-wrap{
+      @include pxCalc(height,80px);
+      @include pxCalc(line-height,80px);
+      @include pxCalc(font-size,$tr_font_size_title);
+      @include pxCalc(padding, 0, $right_width, 0, $left_width);
+    }
+
+    .content-wrap{
+      @include pxCalc(height,586px);
+      .top-wrap{
+        z-index: 100;
+        @include pxCalc(line-height,56px);
+        @include pxCalc(height,56px);
+        @include pxCalc(margin-top,29px);
+        @include pxCalc(margin-bottom,20px);
+        text-align: center;
+        @include pxCalc(font-size,$tr_font_size_base);
+        color: $tr_font_2;
+        position: relative;
+        .text-wrap{
+          @include pxCalc(padding-left,24px);
+           &>div:last-child{
+             @include pxCalc(margin-left,30px);
+           }
+          .val{
+            color: $tr_font_data_3;
+          }
+        }
+        .btn_wrap{
+          @include pxCalc(width,120px);
+          @include pxCalc(height,56px);
+          position: absolute;
+          @include pxCalc(right,24px);
+          top:0;
+          .icon_rotate{
+            @include pxCalc(width,17px);
+            @include pxCalc(height,17px);
+            color: $tr_font_data_base;
+            position: absolute;
+            z-index: 1000;
+            @include pxCalc(left,23px);
+            top: 60%;
+            transform: translateY(-50%);
+          }
+          .vux-1px:before{
+            @include pxCalc(height,100px);
+            @include pxCalc(width,230px);
+            top: 1px;
+            left: 1px;
+            border-color:$tr_line;
+            @include pxCalc(border-radius,8px);
+          }
+          .weui-btn{
+            @include pxCalc(font-size,$tr_font_size_base);
+            @include pxCalc(padding-left,45px);
+            margin: 0 auto;
+            padding-right: 0;
+            &:after{
+              border-color: $tr_line;
+            }
+          }
+
+        }
+      }
+
+      .charts-wrap{
+        @include pxCalc(height,480px);
+        width: 100%;
+        position: relative;
+
+        .unit{
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include pxCalc(width,100px);
+          @include pxCalc(padding-left,24px);
+          text-align: left;
+          color: $tr_font_2;
+          @include pxCalc(font-size,20px);
+        }
+
+        .tipItem{
+          @include pxCalc(height,26px);
+          @include pxCalc(line-height,26px);
+          @include pxCalc(font-size,20px);
+          /*.title{
+            display: inline-block;
+            @include pxCalc(width,85px);
+            text-align: right;
+            padding:0;
+          }
+
+          .val{
+            display: inline-block;
+            text-align: left;
+          }*/
+        }
+
+        .legend-wrap{
+          width: 100%;
+          position: absolute;
+          @include pxCalc(height,33px);
+          @include pxCalc(line-height,33px);
+          @include pxCalc(font-size,24px);
+          color: $tr_font_2;
+          @include pxCalc(bottom,40px);
+          z-index: 101;
+          text-align: center;
+
+          p{
+            display: inline-block;
+            position: relative;
+            @include pxCalc(padding-left,22px);
+            @include pxCalc(margin-right,30px);
+            .vux-1px:before{
+              border-radius: 50%;
+            }
+
+            .blue_circle.vux-1px:before{
+              border-color: #34a9ff;
+            }
+
+            .green_circle.vux-1px:before{
+              border-color: #00bd9a;
+            }
+
+            .red_circle.vux-1px:before{
+              border-color: #ff6960;
+            }
+
+            .yellow_circle.vux-1px:before{
+              border-color: #cac400;
+            }
+
+            .circle{
+              @include pxCalc(height,13px);
+              @include pxCalc(width,13px);
+              position: absolute;
+              top:50%;
+              left: 0;
+              transform: translateY(-50%);
+            }
+          }
+        }
+
+        .mask{
+          position: absolute;
+          @include pxCalc(height,480px);
+          @include pxCalc(width,24px);
+          background: $tr_base;
+          z-index: 100;
+          top:0;
+          right: 0;
+        }
+
+        .charts{
+          @include pxCalc(height,400px);
+          width:100%;
+        }
+
+        .charts_small{
+          @include pxCalc(padding-right,100px);
+        }
+
+        .charts_big_wrap{
+          width: 100%;
+          @include pxCalc(height,400px);
+          @include pxCalc(padding-right,124px);
+          position:absolute;
+          top:0;
+          background: $tr_base;
+          @include pxCalc(left,97px);
+          z-index:99;
+          overflow-y:hidden;
+          overflow-x:auto;
+        }
+
+        .charts_big{
+          width: 500%;
+          @include pxCalc(height,400px);
+        }
+      }
+
+    }
+  }
+
+  .equipment-status-wrap {
+    background:$tr_base;
+    color: $tr_font_base;
+    @include pxCalc(height,360px);
+
+    .title-wrap{
+      @include pxCalc(height,80px);
+      @include pxCalc(line-height,80px);
+      @include pxCalc(font-size,$tr_font_size_title);
+      @include pxCalc(padding, 0, $right_width, 0, $left_width);
+    }
+
+    .content-wrap{
+      @include pxCalc(height,278px);
+      position: relative;
+
+      #equipmentStatus{
+        @include pxCalc(width,250px);
+        @include pxCalc(height,250px);
+        @include pxCalc(margin-top,14px);
+        //@include pxCalc(margin-left,10px);
+      }
+
+      .legend{
+        @include pxCalc(font-size,$tr_font_size_base);
+        @include pxCalc(line-height,37px);
+        color: $tr_font_2;
+        position: absolute;
+        left: 0;
+        top:0;
+        width: 100%;
+        height: 100%;
+        @include pxCalc(padding-left,260px);
+        @include pxCalc(padding-top,50px);
+
+        .top-box{
+          @include pxCalc(margin-bottom,15px);
+          .val{
+            color: $tr_font_data_2;
+            @include pxCalc(margin-left,30px);
+          }
+        }
+
+        .bottom-box{
+          p{
+            &:first-child{
+              @include pxCalc(width,250px);
+            }
+
+            .symbol{
+              display: inline-block;
+              @include pxCalc(width,20px);
+              @include pxCalc(height,20px);
+
+              &.isRun{
+                background: $tr_run;
+              }
+
+              &.isAwait {
+                background: $tr_await;
+              }
+
+              &.isFault{
+                background: $tr_fault;
+              }
+
+              &.isLimit{
+                background: $tr_limit;
+              }
+
+              &.isFix{
+                background: $tr_fix;
+              }
+
+              &.isStop{
+                background: $tr_stop;
+              }
+            }
+
+            .title{
+              @include pxCalc(margin,0, 20px);
+            }
+
+            .val{
+              color: #fefefe;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .power-stat-wrap{
+    background:$tr_base;
+    overflow: hidden;
+    @include pxCalc(height,865px);
+    @include pxCalc(margin,20px,0);
+    color: $tr_font_base;
+
+    .title-wrap{
+      @include pxCalc(height,80px);
+      @include pxCalc(line-height,80px);
+      @include pxCalc(font-size,$tr_font_size_title);
+      @include pxCalc(padding, 0, $right_width, 0, $left_width);
+    }
+
+    .top-wrap{
+      @include pxCalc(height,272px);
+      @include pxCalc(padding,40px, 0, 40px, 40px);
+
+      .vux-1px:before{
+        border-radius: 50%;
+      }
+      .charts-wrap{
+        @include pxCalc(width,192px);
+        @include pxCalc(height,192px);
+
+        .outer_circle{
+          border: 1px solid $tr_line;
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          position: relative;
+
+          .text-wrap{
+            color: $tr_font_2;
+            @include pxCalc(font-size,$tr_font_size_base);
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .val{
+              color: $tr_font_data_2;
+              @include pxCalc(font-size,40px);
+              @include pxCalc(margin-bottom,20px);
+            }
+          }
+        }
+
+        #year_rate {
+          @include pxCalc(width,200px);
+          @include pxCalc(height,200px);
+          position: absolute;
+          top:50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+
+      .info-wrap{
+        @include pxCalc(font-size,$tr_font_size_base);
+        @include pxCalc(padding-left,231px);
+        color: $tr_font_2;
+        height: 100%;
+
+        .item-wrap{
+          &:first-child{
+            @include pxCalc(margin-right,59px);
+          }
+          height: 100%;
+          @include pxCalc(padding,52px,0);
+          .title{
+            @include pxCalc(height,37px);
+            @include pxCalc(line-height,37px);
+            @include pxCalc(margin-bottom,14px);
+          }
+          .val{
+            @include pxCalc(height,37px);
+            @include pxCalc(line-height,37px);
+            color: $tr_font_data_3;
+
+            .unit{
+              @include pxCalc(font-size,20px);
+              @include pxCalc(margin-left,10px);
+              color: $tr_font_2;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom-wrap{
+      @include pxCalc(height,512px);
+      #powerStat{
+        width: 100%;
+        @include pxCalc(height,510px);
+      }
+    }
+  }
+
+  .weather-wrap{
+    background:$tr_base;
+    @include pxCalc(height,252px);
+    color: $tr_font_2;
+    @include pxCalc(font-size,$tr_font_size_base);
+
+    .title-wrap{
+      color: $tr_font_base;
+      @include pxCalc(height,80px);
+      @include pxCalc(line-height,80px);
+      @include pxCalc(font-size,$tr_font_size_title);
+      @include pxCalc(padding, 0, $right_width, 0, $left_width);
+    }
+
+    .content-wrap{
+      @include pxCalc(height,170px);
+      @include pxCalc(padding,40px,0);
+      .item-wrap{
+        height: 100%;
+        width: 33.33%;
+        float: left;
+        text-align: center;
+
+        &:first-child{
+          .val{
+            color: $tr_font_2;
+            @include pxCalc(font-size,$tr_font_size_base);
+          }
+          .title{
+            color: $tr_font_2;
+            @include pxCalc(font-size,20px);
+          }
+        }
+
+        .val{
+          @include pxCalc(font-size,$tr_font_size_bar);
+          color: $tr_font_data_2;
+          @include pxCalc(height,50px);
+          @include pxCalc(line-height,50px);
+        }
+
+        .title{
+          color: $tr_font_data_4;
+          @include pxCalc(height,37px);
+          @include pxCalc(line-height,37px);
+          @include pxCalc(margin-top,4px);
+        }
+      }
+    }
+  }
+
+  .work-num-wrap{
+      background:$tr_base;
+      @include pxCalc(margin,20px,0);
+      @include pxCalc(height,80px);
+      @include pxCalc(line-height,80px);
+      color: $tr_font_base;
+      @include pxCalc(font-size,$tr_font_size_base);
+
+      .title-wrap{
+        height: 100%;
+        @include pxCalc(padding, 0, $right_width, 0, $left_width);
+
+        .title{
+          @include pxCalc(font-size,$tr_font_size_title);
+        }
+
+        .val{
+          @include pxCalc(margin-right,35px);
+          color:$tr_font_2;
+          float: left;
+          span{
+            color: $tr_font_data_4;
+            @include pxCalc(margin-left,10px);
+          }
+        }
+      }
+    }
+
+  .energy-reduction-wrap{
+    background:$tr_base;
+    @include pxCalc(margin-bottom,20px);
+    @include pxCalc(height,80px);
+    @include pxCalc(line-height,80px);
+    color: $tr_font_base;
+    @include pxCalc(font-size,$tr_font_size_base);
+
+    .title-wrap{
+      height: 100%;
+      @include pxCalc(padding, 0, $right_width, 0, $left_width);
+
+      .title{
+        @include pxCalc(font-size,$tr_font_size_title);
+      }
+
+      .unit{
+        @include pxCalc(margin-left,10px);
+      }
+
+      .val{
+        @include pxCalc(margin-right,35px);
+        float: left;
+      }
+    }
+  }
+
+  .power-curve-big-wrap{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 10000;
+
+    .close_btn{
+      position: absolute;
+      // @include pxCalc(width,40px);
+      // @include pxCalc(height,40px);
+      @include pxCalc(right,53px);
+      @include pxCalc(bottom,65px);
+      z-index: 100;
+      fill: $tr_font_data_base;
+    }
+
+    #charts_power_curve_big{
+      width: 100%;
+      position:absolute;
+      top:0;
+      left: 0;
+      z-index: 99;
+      background: $tr_base;
+    }
+
+    .legend-wrap{
+      width: 100%;
+      transform:rotate(90deg);
+      position: absolute;
+      top:50%;
+      left: 42%;
+      @include pxCalc(height,33px);
+      @include pxCalc(line-height,33px);
+      @include pxCalc(font-size,24px);
+      color: $tr_font_2;
+      z-index: 101;
+      text-align: center;
+
+      p{
+        display: inline-block;
+        position: relative;
+        @include pxCalc(padding-left,22px);
+        @include pxCalc(margin-right,30px);
+        .vux-1px:before{
+          border-radius: 50%;
+        }
+
+        .blue_circle.vux-1px:before{
+          border-color: #34a9ff;
+        }
+
+        .green_circle.vux-1px:before{
+          border-color: #00bd9a;
+        }
+
+        .red_circle.vux-1px:before{
+          border-color: #ff6960;
+        }
+
+        .yellow_circle.vux-1px:before{
+          border-color: #cac400;
+        }
+
+        .circle{
+          @include pxCalc(height,13px);
+          @include pxCalc(width,13px);
+          position: absolute;
+          top:50%;
+          left: 0;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .unitY{
+      position: absolute;
+      transform:rotate(90deg);
+      @include pxCalc(top,44px);
+      left: 76%;
+      z-index: 200;
+      @include pxCalc(width,151px);
+      @include pxCalc(padding-left,24px);
+      text-align: right;
+      color: $tr_font_2;
+      @include pxCalc(font-size,20px);
+    }
+
+    .unitY2{
+      position: absolute;
+      transform:rotate(90deg);
+      @include pxCalc(bottom,60px);
+      left: 76%;
+      z-index: 200;
+      @include pxCalc(width,100px);
+      @include pxCalc(padding-left,24px);
+      text-align: left;
+      color: $tr_font_2;
+      @include pxCalc(font-size,20px);
+    }
+
+    .unitX{
+      position: absolute;
+      transform:rotate(90deg);
+      bottom: 3%;
+      right: 90%;
+      z-index: 200;
+      text-align: left;
+      color: $tr_font_2;
+      @include pxCalc(font-size,20px);
+    }
+  }
+}
+
+
+
