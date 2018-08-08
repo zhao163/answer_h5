@@ -1,0 +1,38 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><title>金风科技暨北京马拉松活动</title><link rel="shortcut icon" href=static/favicon.ico><meta name=format-detection content="telephone=no"><meta name=msapplication-tap-highlight content=no><meta name=viewport content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width"><style>#app::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    #app {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 50px;
+      overflow-x: hidden;
+      -webkit-overflow-scrolling: touch;
+    }</style><script>(function (win) {
+      var doc = win.document;
+      var docEl = doc.documentElement;
+      var tid;
+
+      function refreshRem() {
+        var width = docEl.getBoundingClientRect().width;
+        var rem = width * 18 / 375;
+        docEl.style.fontSize = rem + 'px';
+      }
+
+      win.addEventListener('resize', function () {
+        clearTimeout(tid);
+        tid = setTimeout(refreshRem, 300);
+      }, false);
+      win.addEventListener('pageshow', function (e) {
+        if (e.persisted) {
+          clearTimeout(tid);
+          tid = setTimeout(refreshRem, 300);
+        }
+      }, false);
+
+      refreshRem();
+
+    })(window);</script><link href=./static/css/app.d2832ec5175d4d1a918c5662499b80b8.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.3ad1d5771e9b13dbdad2.js></script><script type=text/javascript src=./static/js/vendor.1ce7214e75206fc092b8.js></script><script type=text/javascript src=./static/js/app.a5dc9245a1f4fca6cf89.js></script></body></html>
