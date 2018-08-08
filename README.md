@@ -1,7 +1,3 @@
-# wt_app
-
-> 天润新能-资管平台 for APP
-
 ## Build Setup
 
 ``` bash
